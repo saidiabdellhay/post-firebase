@@ -1,0 +1,14 @@
+<li 
+  [ngClass]="{'list-group-item': true,
+    color:getColor(),
+    'list-group-item-success': getLoveIt(),
+    'list-group-item-danger': getDontLoveIt()}">
+  <h4>
+    <span [ngStyle]="{'font-size': '20px','font-weight':'bold'}" > {{ postTitle }} </span>
+    <span [ngClass]="{'pull-right':true}" [ngStyle]="{'font-size': '14px'}">{{ postCreatedAt | date:'medium'}}</span>
+  </h4>
+  <p>{{ postContent }}</p>
+  <button class="btn btn-success" [disabled]="getLoveIt()" (click)="onLoveIt(posts)"> Love it! </button>
+  <button class="btn btn-danger" [disabled]="getDontLoveIt()" (click)="onDontLoveIt(posts)"> Don't love it! </button>
+  <button class="btn btn-primary pull-right" (click)="onDeletePost()"> Supprimer </button>
+</li>

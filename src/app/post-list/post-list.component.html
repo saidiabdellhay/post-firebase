@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Posts</h2>
+    <div class="list-group">
+      <app-post-list-item *ngFor="let post of post;let i = index" 
+        [posts]="post"
+        [postTitle]="post.title" 
+        [postContent]="post.content" 
+        [postLoveIt]="post.loveIts" 
+        [postCreatedAt]="post.created_at"></app-post-list-item>
+        
+    </div>
+    <button class="btn btn-primary" (click)="onNewPost()">Nouveau post</button>
+  </div>
+</div>
